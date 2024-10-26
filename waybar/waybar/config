@@ -1,0 +1,88 @@
+{
+    "layer": "top",
+    "position": "top",
+    "spacing": 6,
+    "margin-top": 0,
+    "margin-left": 0,
+    "margin-right": 0,
+    "margin-bottom": 0,
+    "height": 42,
+    "modules-left": ["hyprland/window"],
+    "modules-center": ["hyprland/workspaces"],
+    "modules-right": ["tray", "pulseaudio", "network", "memory", "cpu", "clock"],
+    "hyprland/workspaces": {
+        "format": "{name}",
+        "persistent-workspaces": {
+            "*": 10
+        },
+        "on-click": "activate",
+        "on-scroll-up": "hyprctl dispatch workspace e+1",
+        "on-scroll-down": "hyprctl dispatch workspace e-1"
+    },
+    "hyprland/window": {
+        "format": "@ {initialTitle}",
+        "separate-outputs": true
+    },
+    "tray": {
+        "icon-size": 21,
+        "spacing": 10
+    },
+    "clock": {
+        "interval": 1,
+        "format": "{:%H:%M:%S}",
+        "format-alt": "{:%Y-%m-%d %H:%M:%S}",
+        "tooltip-format": "<tt><small>{calendar}</small></tt>",
+        "calendar": {
+            "mode"          : "month",
+            "mode-mon-col"  : 3,
+            "weeks-pos"     : "right",
+            "on-scroll"     : 1,
+            "format": {
+                "months":     "<span color='#ffead3'><b>{}</b></span>",
+                "days":       "<span color='#ecc6d9'><b>{}</b></span>",
+                "weeks":      "<span color='#99ffdd'><b>W{}</b></span>",
+                "weekdays":   "<span color='#ffcc66'><b>{}</b></span>",
+                "today":      "<span color='#ff6699'><b><u>{}</u></b></span>"
+            }
+        },
+        "actions": {
+            "on-click-right": "mode",
+            "on-click-forward": "tz_up",
+            "on-click-backward": "tz_down",
+            "on-scroll-up": "shift_up",
+            "on-scroll-down": "shift_down"
+        }
+    },
+    "cpu": {
+        "interval": 1,
+        "format": "CPU: {usage:2}%",
+        "tooltip": true
+    },
+    "memory": {
+        "interval": 1,
+        "format": "内存: {used:0.1f}G",
+        "tooltip": true,
+        "tooltip-format": " RAM: {used:0.2f}G / {total:0.2f}G\nSwap: {swapUsed:0.2f}G / {swapTotal:0.2f}G"
+    },
+    "network": {
+        "interval": 1,
+        "format-wifi": "{essid} ({signalStrength}%)",
+        "format-ethernet": "{ifname}",
+        "format-linked": "No IP ({ifname})",
+        "format-disconnected": "Disconnected",
+        "tooltip-format": "{ifname} {ipaddr}/{cidr} via {gwaddr}",
+        "format-alt": "{ipaddr}/{cidr}"
+    },
+    "pulseaudio": {
+        "scroll-step": 5,
+        "format": "{icon}{volume:2}%",
+        "format-muted": "静音",
+        "format-bluetooth": "{icon}蓝牙{volume}%",
+        "format-bluetooth-muted": "蓝牙{icon}静音",
+        "format-icons": {
+            "default": ["", "", ""]
+        },
+        "on-click-right": "pavucontrol",
+        "ignored-sinks": ["AudioRelay Virtual Sink", "Recorder Sink"]
+    }
+}

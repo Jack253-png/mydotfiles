@@ -1,0 +1,28 @@
+[window]
+opacity = 0.6
+
+[font]
+size=12.0
+
+[font.bold]
+family="Monaspace Radon"
+style="Bold"
+
+[font.italic]
+family="Monaspace Radon"
+style="italic"
+
+[font.normal]
+family="Monaspace Radon"
+style="Bold"
+
+[bell]
+animation="EaseOutQuad"
+duration=500
+color="#ffffff"
+
+[cursor.style]
+shape="Beam"
+
+[terminal.shell]
+program="/bin/fish"
