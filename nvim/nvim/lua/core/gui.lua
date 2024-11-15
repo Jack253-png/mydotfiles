@@ -1,5 +1,5 @@
 --- FONT SIZE
-vim.g.gui_font_default_size = 13
+vim.g.gui_font_default_size = 11
 vim.g.gui_font_size = vim.g.gui_font_default_size
 vim.g.gui_font_face = "Monaspace Radon"
 
